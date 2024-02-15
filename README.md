@@ -1,7 +1,8 @@
 # Game-Of-Life
 
-[-] Demo: https://youtu.be/CpPwMm8C4bE
+- Demo: https://youtu.be/CpPwMm8C4bE
 
 # Future
-[-] Easy setting
-[-] Increase FPS
+- Easy setting
+  
+- Increase FPS
