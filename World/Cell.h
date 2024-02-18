@@ -1,6 +1,8 @@
 #ifndef _Cell_h_
 #define _Cell_h_
 
+#include <algorithm>
+
 class Cell {
    private:
     int type;

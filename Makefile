@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -std=c++20 -Ofast -fopenmp   
+CXXFLAGS := -std=c++20 -Ofast -fopenmp
 SFML_LIBS := -lsfml-graphics -lsfml-window -lsfml-system
 SRC_DIR := Graphic World
 SRC := $(wildcard $(addsuffix /*.cpp, $(SRC_DIR)))

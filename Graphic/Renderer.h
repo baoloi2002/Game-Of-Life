@@ -9,15 +9,17 @@
 class Renderer {
    private:
     sf::RenderWindow window;
+    sf::View view;
     static Renderer* pinstance_;
     static std::mutex mutex_;
     int resolutionX;
     int resolutionY;
 
    protected:
-    Renderer() : window(sf::VideoMode(1855, 900), "My window") {
-        resolutionX = 371;
-        resolutionY = 180;
+    Renderer() : window(sf::VideoMode(1865, 900), "My window") {
+        resolutionX = 1865 / 9;
+        resolutionY = 900 / 9;
+        view = window.getDefaultView();
     }
     ~Renderer() {}
 
@@ -48,6 +50,8 @@ class Renderer {
 
     int getX() { return resolutionX; }
     int getY() { return resolutionY; }
+
+    void setViewZoom(float factor) { view.zoom(factor); }
 };
 
 #endif  // _Renderer_h_

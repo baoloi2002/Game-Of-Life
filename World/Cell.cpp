@@ -13,20 +13,14 @@ void Cell::multiplyForce(const float factor) {
 // Move in delta time
 void Cell::move(const float &delaTime, const int &minX, const int &maxX,
                 const int &minY, const int &maxY) {
-    float dx = forceX * delaTime;
-    float dy = forceY * delaTime;
+    const float dx = forceX * delaTime;
+    const float dy = forceY * delaTime;
 
     // Move X
     x += dx;
-    if (x > maxX)
-        x -= maxX;
-    else if (x < minX)
-        x += maxX;
-
     // Move Y
     y += dy;
-    if (y > maxY)
-        y -= maxY;
-    else if (y < minY)
-        y += maxY;
+
+    x = std::max(minX * 1.0f, std::min(maxX * 1.0f, x));
+    y = std::max(minY * 1.0f, std::min(maxY * 1.0f, y));
 }

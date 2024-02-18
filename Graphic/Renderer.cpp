@@ -19,7 +19,10 @@ void Renderer::close() { window.close(); }
 
 void Renderer::clear(const sf::Color& color) { window.clear(color); }
 
-void Renderer::display() { window.display(); }
+void Renderer::display() {
+    window.setView(view);
+    window.display();
+}
 
 void Renderer::draw(
     const std::vector<std::pair<int, std::pair<float, float> > >& world) {
@@ -32,6 +35,7 @@ void Renderer::draw(
         sf::CircleShape shape(std::min(cellWidth, cellHeight) / 2);
         shape.setPosition(u.second.first * cellWidth,
                           u.second.second * cellHeight);
+
         shape.setOrigin(shape.getRadius(), shape.getRadius());
         // Set color based on cell type
         switch (u.first) {
